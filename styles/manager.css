@@ -1,0 +1,163 @@
+.managerMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-top: 18px;
+}
+
+.panel {
+    background: #ffffff;
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.panel > h3 {
+    background: navy;
+    color: #ffffff;
+    padding: 10px 12px;
+    font-weight: 800;
+    border-bottom: 2px solid;
+    letter-spacing: .2px;
+}
+
+.calender {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+}
+
+.calender form {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 2px solid;
+}
+
+.calender table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calender th, .calender td {
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+.calender th {
+    background: navy;
+    color: #ffffff;
+}
+
+.calender td {
+    height: 44px;
+}
+
+.calender nav ul{
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    margin: 0;
+    border-top: 2px solid;
+    justify-content: center;
+}
+
+.calender p {
+    padding: 0 12px 12px
+}
+
+.slots {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.slots #SlotDate {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid;
+}
+
+.slots table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.slots th, .slots td {
+    border-bottom: 1px solid;
+    padding: 9px 12px;
+}
+
+.slots thead th {
+    background: navy;
+    color: #ffffff;
+    border: 2px solid;
+    text-align: left;
+}
+
+.slots tbody tr:nth-child(2n) td, .slots tbody tr:nth-child(2n) th {
+    background: #f5f9ff;
+} 
+
+.slots form > div {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-top: 2px solid;
+    justify-content: center;
+}
+
+button {
+    background: navy;
+    color: #ffffff;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dj {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.dj > p {
+    padding: 8px 12px;
+    margin: 0;
+}
+
+.dj ul {
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.dj ul li article {
+    display: grid;
+    grid-template-columns: 44px 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+input, select, button {
+    font: inherit;
+}
+
+input[type="date"], input[type="month"] select{
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 6px 8px;
+}

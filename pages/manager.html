@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WavyFM - Manager</title>
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/manager.css" />
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navBar">
+                <div class="wavy">WavyFM</div>
+                <form class="controls" action="#" method="get" aria-label="Search">
+                    <label for="query" class="hidden">Search</label>
+                    <input id="query" name="query" type="search" placeholder="Search" minlength="2" title="Enter at least 2 characters" required />
+                </form>
+
+                <div class="controls">
+                    <nav aria-label="Options">
+                        <ul>
+                            <li><a href="#">Options</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <details class="profile">
+                    <summary>Settings / Profile</summary>
+                    <ul>
+                        <li><a  href="#">Profile</a></li>
+                        <li><a  href="#">Preferences</a></li>
+                        <li><a  href="#">Help</a></li>
+                    </ul>
+            </div>
+        </header>
+        <nav class="primary" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="producer.html">Producer</a></li>
+                <li><a href="dj.html">DJ</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2 class="hidden">Schedule Workspace</h2>
+            <section class="managerMain" aria-labelledby="Workspace">
+                <section class="panel calender" aria-labelledby="Calender">
+                    <h3 id="Title">Calender</h3>
+                    <form action="#" method="get" aria-labelledby="controls">
+                        <label for="month">Month</label>
+                        <input id="month" name="month" type="month" required />
+                        <button type="submit" aria-labelledby="Go to Month">Load</button>
+                    </form>
+                    <!-- <nav aria-labelledby="DaysWeek">
+                        <ul>
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                    </nav> -->
+
+                    <table aria-labelledby="CalenderGrid">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sun</th>
+                                <th scope="col">Mon</th>
+                                <th scope="col">Tue</th>
+                                <th scope="col">Wed</th>
+                                <th scope="col">Thu</th>
+                                <th scope="col">Fri</th>
+                                <th scope="col">Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;</td><td>&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                            </tr>
+                            <tr>
+                                <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+                            </tr>
+                            <tr>
+                                <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                            </tr>
+                            <tr>
+                                <td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td>&nbsp;</td><td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-labelledby="Navigation">
+                        <ul>
+                            <li><button type="button" title="Prev">&lt;--</button></li>
+                            <li><button type="button" title="Today">[--]</button></li>
+                            <li><button type="button" title="Next">--&gt;</button></li>
+                        </ul>
+                    </nav>
+                    <p><a href="#" aria-describedby="WeeklyNotes">Weekly Reports</a></p>
+                    <p id="WeeklyNotes">Compare planed vs played for the selected week.</p>
+                </section>
+                <section class="panel slots" aria-labelledby="TimeSlots">
+                    <h3 id="Title">Time</h3>
+                    <form id="SlotDate" action="#" method="post" aria-label="Select Date">
+                        <label for="assignDate">Date</label>
+                        <input id="assignDate" name="assignDate" type="date" required />
+                        <button type="submit">Load Slots</button>
+                    </form>
+
+                    <form action="#" method="post" aria-labelledby="assignFormTitle">
+                        <h4 id="assignFormTitle">Assign DJs to slots</h4>
+
+                        <table aria-describedby="SlotsHelp">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Slot</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Assigned DJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Slot 1</th>
+                                    <td>08:00 - 10:00</td>
+                                    <td>
+                                        <label for="dj1" class="hidden">DJ for Slot 1</label>
+                                        <select id="dj1" name="dj1" required>
+                                            <option value="" selected disabled>Choose DJ</option>
+                                            <option>DJ A</option>
+                                            <option>DJ B</option>
+                                            <option>DJ C</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Slot 2</th>
+                                    <td>10:00 - 12:00</td>
+                                    <td>
+                                        <label for="dj2" class="hidden">DJ for Slot 2</label>
+                                        <select id="dj2" name="dj2" required>
+                                            <option value="" selected disabled>Choose DJ</option>
+                                            <option>DJ A</option>
+                                            <option>DJ B</option>
+                                            <option>DJ C</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Slot 3</th>
+                                    <td>12:00 - 14:00</td>
+                                    <td>
+                                        <label for="dj3" class="hidden">DJ for Slot 3</label>
+                                        <select id="dj3" name="dj3" required>
+                                            <option value="" selected disabled>Choose DJ</option>
+                                            <option>DJ A</option>
+                                            <option>DJ B</option>
+                                            <option>DJ C</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Slot 4</th>
+                                    <td>14:00 - 16:00</td>
+                                    <td>
+                                        <label for="dj4" class="hidden">DJ for Slot 4</label>
+                                        <select id="dj4" name="dj4" required>
+                                            <option value="" selected disabled>Choose DJ</option>
+                                            <option>DJ A</option>
+                                            <option>DJ B</option>
+                                            <option>DJ C</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Slot 5</th>
+                                    <td>16:00 - 18:00</td>
+                                    <td>
+                                        <label for="dj5" class="hidden">DJ for Slot 5</label>
+                                        <select id="dj5" name="dj5" required>
+                                            <option value="" selected disabled>Choose DJ</option>
+                                            <option>DJ A</option>
+                                            <option>DJ B</option>
+                                            <option>DJ C</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p id="help">All slot assignments are required before saving.</p>
+
+                        <div>
+                            <button type="submit" name="action" value="save">Save</button>
+                            <button type="button" name="action" value="undo">Undo</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="panel dj" aria-labelledby="DJTitles">
+                    <h3 id="Title">DJ</h3>
+                    <p>Available DJs</p>
+                    <ul aria-labelledby="Roster">
+                        <li>
+                            <article>
+                                <header>
+                                    <h4>DJ A</h4>
+                                </header>
+                                <p>TOP 40 - POP - Weekdays</p>
+                                <p>Rating 90%</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <header>
+                                    <h4>DJ B</h4>
+                                </header>
+                                <p>TOP 40 - RNB - Weeknights</p>
+                                <p>Rating 77%</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <header>
+                                    <h4>DJ C</h4>
+                                </header>
+                                <p>TOP 40 - HipHop - Weekends</p>
+                                <p>Rating 50%</p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <small>&copy; 2025 WavyFM - educational purposes only</small>
+        </footer>
+
+    </body>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>WavyFM - Home</title>
+        <link rel="stylesheet" href="../styles/style.css" />
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="navBar">
+                <div class="wavy">WavyFM</div>
+                <form class="controls" action="#" method="get" aria-label="Search">
+                    <label for="query" class="hidden">Search</label>
+                    <input id="query" name="query" type="search" placeholder="Search" minlength="2" title="Enter at least 2 characters" required />
+                </form>
+
+                <div class="controls">
+                    <nav aria-label="Options">
+                        <ul>
+                            <li><a href="#">Options</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <details class="profile">
+                    <summary>Settings / Profile</summary>
+                    <ul>
+                        <li><a  href="#">Profile</a></li>
+                        <li><a  href="#">Preferences</a></li>
+                        <li><a  href="#">Help</a></li>
+                    </ul>
+            </div>
+        </header>
+
+        <nav class="primary" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="producer.html">Producer</a></li>
+                <li><a href="dj.html">DJ</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section aria-labelledby="roleTitle">
+                <h2 id="roleTitle" class="hidden"> Roles</h2>
+                <div class="grid">
+                    <article class="roleCard" aria-hidden="true">
+                        <div class="thumbnail">ICON</div>
+                        <a href="manager.html">Manager</a>
+                    </article>
+                    <article class="roleCard" aria-hidden="true">
+                        <div class="thumbnail">ICON</div>
+                        <a href="producer.html">Producer</a>
+                    </article>
+                    <article class="roleCard"  aria-hidden="true">
+                        <div class="thumbnail">ICON</div>
+                        <a href="DJ.html">DJ</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel" aria-label="Overview">
+                <div>
+                    <h3>What you can do here</h3>
+                    <ul>
+                        <li>Navigate to Manager, Producer, and DJ role pages</li>
+                        <li>Use the search bar to find the songs, DJs, or shows</li>
+                        <li>Review a quick role comparison table</li>
+                    </ul>
+                    <p class="mute">this is a prototype. Data may be placeholder</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <small>&copy; 2025 WavyFM - educational purposes only</small>
+        </footer>
+    </body>
+</html>
