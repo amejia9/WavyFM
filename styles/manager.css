@@ -1,163 +1,255 @@
+:root {
+    --main-color: navy;
+    --main-second: #334155;
+    --white-color: #ffffff;
+    --white-second: #9abddc;
+    --border: #0b163b;
+    --opposite: #f5f9ff;
+    --accent: lightskyblue;
+}
+
+/* main manager space */
 .managerMain {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 18px;
-    align-items: start;
+    align-items: stretch;
     margin-top: 18px;
 }
-
+/* main panel base */
 .panel {
-    background: #ffffff;
-    border: 2px solid;
+    background: var(--white-color);
+    border: 2px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
-}
-
-.panel > h3 {
-    background: navy;
-    color: #ffffff;
-    padding: 10px 12px;
-    font-weight: 800;
-    border-bottom: 2px solid;
-    letter-spacing: .2px;
-}
-
-.calender {
-    display: grid;
-    grid-template-rows: auto auto auto auto;
+    display: flex;
+    flex-direction: column;
     gap: 0;
 }
 
-.calender form {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 8px;
-    align-items: center;
+.panel > h3 {
+    background: var(--main-color);
+    color: var(--white-color);
     padding: 10px 12px;
-    border-bottom: 2px solid;
-}
-
-.calender table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.calender th, .calender td {
-    border: 1px solid;
-    padding: 10px;
-    text-align: center;
-}
-
-.calender th {
-    background: navy;
-    color: #ffffff;
-}
-
-.calender td {
-    height: 44px;
-}
-
-.calender nav ul{
-    list-style: none;
-    display: flex;
-    gap: 8px;
-    padding: 10px 12px;
+    font-weight: 800;
+    border-bottom: 2px solid var(--border);
+    letter-spacing: .2px;
     margin: 0;
-    border-top: 2px solid;
-    justify-content: center;
 }
-
-.calender p {
-    padding: 0 12px 12px
-}
-
-.slots {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-}
-
-.slots #SlotDate {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 8px;
-    align-items: center;
-    padding: 10px 12px;
-    border-bottom: 1px solid;
-}
-
-.slots table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.slots th, .slots td {
-    border-bottom: 1px solid;
-    padding: 9px 12px;
-}
-
-.slots thead th {
-    background: navy;
-    color: #ffffff;
-    border: 2px solid;
-    text-align: left;
-}
-
-.slots tbody tr:nth-child(2n) td, .slots tbody tr:nth-child(2n) th {
-    background: #f5f9ff;
-} 
-
-.slots form > div {
+/* shared section */
+.calendar #calendarControls, 
+.slots #slotControls,
+.dj #djControls {
     display: flex;
-    gap: 10px;
-    padding: 12px;
-    border-top: 2px solid;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-block: 8px;
+    margin: 0;
+    border-bottom: 2px solid var(--main-color);
 }
 
+.calendar #monthName,
+.slots #assignFormTitle,
+.dj #rosterTitle {
+    text-align: center;
+    margin: 10px 0;
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* all buttons */
 button {
-    background: navy;
-    color: #ffffff;
+    background: var(--main-color);
+    color: var(--white-color);
     border: 0;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
 }
 
-.dj {
-    display: grid;
-    grid-template-rows: auto 1fr;
+button:hover,
+#weeklyNotes:hover {
+    background: var(--white-second);
+    color: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.dj > p {
-    padding: 8px 12px;
-    margin: 0;
+.reports p,
+.slots #help,
+.dj #djHelp {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--main-second);
 }
 
-.dj ul {
-    list-style: none;
-    padding: 12px;
-    margin: 0;
-    display: grid;
-    gap: 12px;
+.calendar nav ul,
+.slots #slotsButtons,
+.dj #djActions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    border-top: 2px solid var(--main-color);
 }
 
-.dj ul li article {
-    display: grid;
-    grid-template-columns: 44px 1fr 1fr;
-    gap: 12px;
-    align-items: center;
-    border: 2px solid;
-    border-radius: 8px;
-    padding: 8px;
+.slots #help,
+.dj #djHelp {
+    border-top: 2px solid var(--main-color);
 }
 
 input, select, button {
     font: inherit;
 }
 
-input[type="date"], input[type="month"] select{
-    border: 2px solid;
+input[type="date"], input[type="month"], input[type="search"], select{
+    border: 2px solid var(--border);
     border-radius: 8px;
     padding: 6px 8px;
+}
+
+
+/* calendar panel */
+.calendar table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.calendar th, .calendar td {
+    border: 0;
+    padding: 10px;
+    text-align: center;
+    height: 44px;
+}
+
+.calendar th {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+#calendarTable td.selected {
+    background: var(--accent);
+    outline: 3px solid var(--border);
+}
+
+.calendar nav ul{
+    list-style: none;
+}
+
+.calendar #calendarTable {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+/* slots panel */
+.slots table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.slots th, .slots td {
+    border-bottom: 1px solid var(--border);
+    padding: 9px 12px;
+}
+
+.slots thead th {
+    background: var(--main-color);
+    color: var(--white-color);
+    border: 2px solid var(--border);
+    text-align: left;
+}
+
+.slots tbody tr:nth-child(2n) td, 
+.slots tbody tr:nth-child(2n) th {
+    background: var(--opposite);
+} 
+
+.slots #assignFormTitle + #slotList {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+
+/* dj panel */
+.dj ul {
+    list-style: none;
+    padding: 12px 0;
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    gap: 12px;
+    /* scrolling */
+    flex: 0 1 360px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.djCard {
+    display: grid;
+    grid-template-columns: 76px 1fr 2fr;
+    gap: 12px;
+    align-items: center;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 8px;
+    background: var(--white-color);
+}
+
+.djCard .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--white-second);
+    border: 2px solid var(--border);
+}
+
+.djCard header {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+.djCard header h4 {
+    margin: 0;
+    color: var(--main-color);
+    font-size: 1rem;
+}
+
+.djCard .meta p {
+    margin: 0;
+    color: var(--main-second);
+}
+
+.dj .empty {
+    text-align: center;
+    color: var(--main-second);
+    padding: 8px 0;
+}
+
+
+/* reports */
+.reports {
+    text-align: center;
+    padding: 16px;
+    border-top: 2px solid var(--main-color);
+}
+
+#weeklyNotes {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--main-color);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
 }
